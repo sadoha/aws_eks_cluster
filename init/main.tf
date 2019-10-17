@@ -2,7 +2,6 @@
 module "s3" {
   source                        = "../modules/init/s3"
   name                          = "${var.name}"
-  env                           = "${var.env}"
 
   tags = {
     Infra                       = "${var.name}"
@@ -14,7 +13,6 @@ module "s3" {
 module "dmdb" {
   source                        = "../modules/init/dmdb"
   name                          = "${var.name}"
-  env                           = "${var.env}"
 
   tags = {
     Infra                       = "${var.name}"

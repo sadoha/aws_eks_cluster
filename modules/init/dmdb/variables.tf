@@ -1,7 +1,5 @@
 variable "name" {}
 
-variable "env" {}
-
 variable "read_capacity" {
   description = "The read capacity of dynamodb tables"
   default = "5"
