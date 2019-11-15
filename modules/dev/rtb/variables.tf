@@ -1,14 +1,18 @@
-variable "cluster_name" {}
-
 variable "name" {}
 
 variable "env" {}
 
 variable "vpc" {}
 
-variable "gateway" {}
+variable "ig_gateway" {}
 
-variable "subnet" {}
+variable "nat_gateway" {}
+
+variable "subnet_public" {}
+
+variable "subnet_private" {}
+
+data "aws_availability_zones" "available" {}
 
 variable "tags" {
   type    = "map"

@@ -4,7 +4,6 @@ resource "aws_internet_gateway" "ig" {
   tags = "${
     map(
      "Name", "ig-${var.name}-${var.env}",
-     "kubernetes.io/cluster/${var.cluster_name}", "shared",
     )
   }"
 }

@@ -1,16 +1,15 @@
-data "aws_ami" "eks_worker" {
+data "aws_ami" "ami" {
   filter {
     name   = "name"
-    values = ["amazon-eks-node-1.14-v*"]
+    values = ["CentOS 7*"]
   }
 
   most_recent = true
-  owners      = ["amazon"] # Amazon EKS AMI Account ID
+  owners      = ["amazon"] # Amazon AMI Account ID
 
   tags = "${
     map(
      "Name", "vpc-${var.name}-${var.env}",
-     "kubernetes.io/cluster/${var.cluster_name}", "shared",
     )
   }"
 }

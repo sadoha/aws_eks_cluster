@@ -1,4 +1,4 @@
 // Amazon 
-output "config_map_aws_auth" {
-  value = "${module.iamroles.config_map_aws_auth}"
+output "id" {
+  value = "${module.natgw.nat_gateway_id}"
 }

@@ -1,14 +1,13 @@
-variable "cluster_name" {}
-
 variable "name" {}
 
 variable "env" {}
 
-variable "subnet" {}
+variable "subnet_public" {}
 
-variable "launch_configuration" {}
+data "aws_availability_zones" "available" {}
 
 variable "tags" {
   type    = "map"
   default = {}
 }
+

@@ -5,7 +5,6 @@ resource "aws_vpc" "vpc" {
   tags = "${
     map(
      "Name", "vpc-${var.name}-${var.env}",
-     "kubernetes.io/cluster/${var.cluster_name}", "shared",
     )
   }"
 }

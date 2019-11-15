@@ -1,9 +1,3 @@
-variable "cluster_name" {
-  default = "aws-eks-cluster"
-  type    = "string"
-  description = "The name of EKS cluster"
-}
-
 variable "name" {
   default = "projectname"
   description = "The name of project"

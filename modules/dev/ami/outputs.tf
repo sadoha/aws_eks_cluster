@@ -1,4 +1,4 @@
-output "ami_eks_worker_id" {
-  value = "${data.aws_ami.eks_worker.id}"
+output "ami_ami_id" {
+  value = "${data.aws_ami.ami.id}"
 }
 

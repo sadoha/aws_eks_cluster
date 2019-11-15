@@ -1,5 +1,3 @@
-variable "cluster_name" {}
-
 variable "name" {}
 
 variable "env" {}
