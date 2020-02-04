@@ -1,20 +1,21 @@
-variable "name" {
-  default = "projectname"
-  description = "The name of project"
+#
+# Variables Configuration
+#
+
+variable "projectname" {
+  type    	= string
+  default 	= "abc"
+  description   = "The name of current project"
 }
 
-variable "env" {
-  description = "Environment name"
-  default = "dev"
+variable "environment" {
+  type        	= string
+  default     	= "dev"
+  description 	= "Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT'"
 }
 
-variable "region" {
-  description = "Region that the instances will be created"
-  default = "us-east-1"
+variable "countindex" {
+  type    	= string
+  default 	= "3"
+  description   = ""
 }
-
-variable "profile" {
-  description = "The profile you want to use"
-  default     = "default"
-}
-
