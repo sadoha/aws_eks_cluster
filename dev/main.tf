@@ -24,3 +24,12 @@ module "eks" {
   subnet_id			= "${module.vpc.subnet_id}"
   key_pair			= "${module.key.key_pair_id}"
 }
+
+// Amazon CloudWatch
+module "cloudwatch" {
+  source                        = "../modules/cloudwatch"
+  projectname                   = "${var.projectname}"
+  environment                  	= "${var.environment}"
+  countindex                 	= "${var.countindex}"
+  autoscaling_groups_name	= "${module.eks.autoscaling_groups_name}"
+}

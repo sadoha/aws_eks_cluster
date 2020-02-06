@@ -57,3 +57,8 @@ output "config_map_aws_auth" {
 output "kubeconfig" {
   value = local.kubeconfig
 }
+
+output "autoscaling_groups_name" {
+  value = module.eks.autoscaling_groups_name
+}
+

@@ -41,7 +41,7 @@ resource "aws_iam_role_policy_attachment" "nodes-AmazonEC2ContainerRegistryReadO
 
 resource "aws_eks_node_group" "nodes" {
   cluster_name    = aws_eks_cluster.cluster.name
-  node_group_name = "${var.projectname}-${var.environment}"
+  node_group_name = "nodegroup-${var.projectname}-${var.environment}"
   node_role_arn   = aws_iam_role.nodes.arn
   subnet_ids      = var.subnet_id
   ami_type	  = "AL2_x86_64"
@@ -64,7 +64,7 @@ resource "aws_eks_node_group" "nodes" {
   remote_access {
     ec2_ssh_key               = var.key_pair
     source_security_group_ids = [aws_security_group.cluster.id]
-  }  
+  }
 
   labels = {
     Type = "t3.medium"
