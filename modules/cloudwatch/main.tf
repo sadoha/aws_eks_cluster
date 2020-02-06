@@ -64,7 +64,7 @@ resource "aws_cloudwatch_metric_alarm" "heavy_asg_cpu_usage_is_very_low" {
   namespace 				= "AWS/EC2"
   period 				= 60
   statistic 				= "Average"
-  threshold 				= 1 #20
+  threshold 				= 40 
 
   dimensions = {
     AutoScalingGroupName 		= var.autoscaling_groups_name[0]
