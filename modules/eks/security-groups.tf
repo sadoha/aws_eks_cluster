@@ -1,9 +1,8 @@
-#
 #  EC2 Security Group to allow networking traffic with EKS cluster
 #
 
 resource "aws_security_group" "cluster" {
-  name        = "${var.projectname}-${var.environment}"
+  name        = "cluster-${var.projectname}-${var.environment}"
   description = "Cluster communication with worker nodes"
   vpc_id      = var.vpc_id
 
@@ -15,7 +14,7 @@ resource "aws_security_group" "cluster" {
   }
 
   tags = map(
-    "Name", "eks-${var.projectname}-${var.environment}",
+    "Name", "cluster-eks-cluster-${var.projectname}-${var.environment}",
     "kubernetes.io/cluster/cluster-${var.projectname}-${var.environment}", "shared",
   )
 }
@@ -39,3 +38,4 @@ resource "aws_security_group_rule" "cluster-ingress-workstation-ssh" {
   to_port           = 22
   type              = "ingress"
 }
+

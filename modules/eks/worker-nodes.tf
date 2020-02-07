@@ -10,7 +10,7 @@ resource "aws_eks_node_group" "nodes" {
   subnet_ids      = var.subnet_id
   ami_type	  = "AL2_x86_64"
   disk_size	  = 20
-  instance_types  = ["t3.medium"]
+  instance_types  = ["t3.xlarge"]
   release_version = "1.14.7-20190927"
   version         = "1.14"
 
@@ -31,7 +31,7 @@ resource "aws_eks_node_group" "nodes" {
   }
 
   labels = {
-    Type = "t3.medium"
+    Type = "t3.xlarge"
   } 
 
   depends_on = [
