@@ -34,3 +34,41 @@ data "http" "workstation-external-ip" {
 locals {
   workstation-external-cidr = "${chomp(data.http.workstation-external-ip.body)}/32"
 }
+
+#
+#  EKS Cluster
+#
+
+variable "cluster_version" {
+  type          = string
+  default       = "1.14"
+  description   = "The version of a EKS cluster"
+}
+
+#
+# EKS Worker Nodes Resources
+#
+
+variable "node_group_version" {
+  type          = string
+  default       = "1.14"
+  description   = "The version of a EKS cluster"
+}
+
+variable "node_group_release_version" {
+  type          = string
+  default       = "1.14.7-20190927"
+  description   = "The release version of a EKS cluster"
+}
+
+variable "node_group_instance_types" {
+  type          = string
+  default       = "t3.xlarge"
+  description   = "The instance types of a EKS cluster"
+}
+
+variable "node_group_disk_size" {
+  type          = string
+  default       = "20"
+  description   = "The disk size a EKS nodes"
+}

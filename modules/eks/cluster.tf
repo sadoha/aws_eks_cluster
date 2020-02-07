@@ -5,7 +5,7 @@
 resource "aws_eks_cluster" "cluster" {
   name     		= "cluster-${var.projectname}-${var.environment}"
   role_arn 		= aws_iam_role.cluster.arn
-  version      		= "1.14"
+  version      		= var.cluster_version
     
   tags = map(
     "Name", "eks-${var.projectname}-${var.environment}",

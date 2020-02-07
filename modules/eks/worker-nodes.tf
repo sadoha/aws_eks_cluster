@@ -9,10 +9,10 @@ resource "aws_eks_node_group" "nodes" {
   node_role_arn   = aws_iam_role.nodes.arn
   subnet_ids      = var.subnet_id
   ami_type	  = "AL2_x86_64"
-  disk_size	  = 20
-  instance_types  = ["t3.xlarge"]
-  release_version = "1.14.7-20190927"
-  version         = "1.14"
+  disk_size	  = var.node_group_disk_size
+  instance_types  = [var.node_group_instance_types]
+  release_version = var.node_group_release_version
+  version         = var.node_group_version
 
   tags = map(
     "Name", "eks-${var.projectname}-${var.environment}",
@@ -31,7 +31,7 @@ resource "aws_eks_node_group" "nodes" {
   }
 
   labels = {
-    Type = "t3.xlarge"
+    Type = var.node_group_instance_types
   } 
 
   depends_on = [
